@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowers & Moon for You</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at center, #0b0033, #000);
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    .moon {
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #fff, #ddd 60%, #aaa);
+      border-radius: 50%;
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      box-shadow: 0 0 50px 10px rgba(255,255,255,0.3);
+    }
+
+    .flower {
+      position: absolute;
+      top: -50px;
+      width: 40px;
+      height: 40px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
+      background-size: cover;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="moon"></div>
+  <h1>For Someone Special 🌸🌙</h1>
+  <p>This simple gift is for you...<br>because you deserve the moon and all the flowers in the world.</p>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/22/audio_5f4527263e.mp3?filename=soft-piano-ambient-111527.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.body.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 10000);
+    }
+
+    setInterval(createFlower, 500);
+  </script>
+</body>
+</html>
