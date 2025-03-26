@@ -1,85 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flowers & Moon for You</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: radial-gradient(circle at center, #0b0033, #000);
-      overflow: hidden;
-      font-family: 'Arial', sans-serif;
-      color: white;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Ice Cream 🍦</title>
+    <style>
+        body {
+            background-color: #0a0a23;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    h1 {
-      margin-top: 50px;
-      font-size: 2.5rem;
-    }
+        .ice-cream {
+            position: relative;
+            width: 150px;
+            height: 200px;
+        }
 
-    p {
-      font-size: 1.2rem;
-      margin-top: 20px;
-    }
+        /* Ice cream scoops */
+        .scoop {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+        }
 
-    .moon {
-      width: 150px;
-      height: 150px;
-      background: radial-gradient(circle, #fff, #ddd 60%, #aaa);
-      border-radius: 50%;
-      position: absolute;
-      top: 50px;
-      right: 50px;
-      box-shadow: 0 0 50px 10px rgba(255,255,255,0.3);
-    }
+        .scoop:nth-child(1) {
+            top: 0;
+            background: radial-gradient(circle, pink, hotpink);
+            box-shadow: 0 0 30px hotpink;
+        }
 
-    .flower {
-      position: absolute;
-      top: -50px;
-      width: 40px;
-      height: 40px;
-      background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
-      background-size: cover;
-      animation: fall linear infinite;
-    }
+        .scoop:nth-child(2) {
+            top: 60px;
+            background: radial-gradient(circle, lightblue, deepskyblue);
+            box-shadow: 0 0 30px deepskyblue;
+        }
 
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(360deg);
-      }
-    }
+        .scoop:nth-child(3) {
+            top: 110px;
+            background: radial-gradient(circle, lightgreen, limegreen);
+            box-shadow: 0 0 30px limegreen;
+        }
 
-    audio {
-      display: none;
-    }
-  </style>
+        /* Cone */
+        .cone {
+            position: absolute;
+            top: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-top: 100px solid #d2691e;
+            box-shadow: 0 0 30px rgba(210, 105, 30, 0.6);
+        }
+
+    </style>
 </head>
 <body>
-  <div class="moon"></div>
-  <h1>For Someone Special 🌸🌙</h1>
-  <p>This simple gift is for you...<br>because you deserve the moon and all the flowers in the world.</p>
-
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/22/audio_5f4527263e.mp3?filename=soft-piano-ambient-111527.mp3" type="audio/mpeg">
-  </audio>
-
-  <script>
-    function createFlower() {
-      const flower = document.createElement('div');
-      flower.classList.add('flower');
-      flower.style.left = Math.random() * 100 + 'vw';
-      flower.style.animationDuration = 5 + Math.random() * 5 + 's';
-      document.body.appendChild(flower);
-
-      setTimeout(() => {
-        flower.remove();
-      }, 10000);
-    }
-
-    setInterval(createFlower, 500);
-  </script>
+    <div class="ice-cream">
+        <div class="scoop"></div>
+        <div class="scoop"></div>
+        <div class="scoop"></div>
+        <div class="cone"></div>
+    </div>
 </body>
 </html>
+
