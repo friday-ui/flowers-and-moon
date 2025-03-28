@@ -3,75 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glowing Ice Cream 🍦</title>
+    <title>Loading...</title>
     <style>
         body {
-            background-color: #0a0a23;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
-            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            flex-direction: column;
         }
-
-        .ice-cream {
-            position: relative;
-            width: 150px;
-            height: 200px;
+        #loading {
+            font-size: 24px;
         }
-
-        /* Ice cream scoops */
-        .scoop {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+        #content {
+            display: none;
+            font-size: 36px;
+            color: red;
         }
-
-        .scoop:nth-child(1) {
-            top: 0;
-            background: radial-gradient(circle, pink, hotpink);
-            box-shadow: 0 0 30px hotpink;
-        }
-
-        .scoop:nth-child(2) {
-            top: 60px;
-            background: radial-gradient(circle, lightblue, deepskyblue);
-            box-shadow: 0 0 30px deepskyblue;
-        }
-
-        .scoop:nth-child(3) {
-            top: 110px;
-            background: radial-gradient(circle, lightgreen, limegreen);
-            box-shadow: 0 0 30px limegreen;
-        }
-
-        /* Cone */
-        .cone {
-            position: absolute;
-            top: 160px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 60px solid transparent;
-            border-right: 60px solid transparent;
-            border-top: 100px solid #d2691e;
-            box-shadow: 0 0 30px rgba(210, 105, 30, 0.6);
-        }
-
     </style>
 </head>
 <body>
-    <div class="ice-cream">
-        <div class="scoop"></div>
-        <div class="scoop"></div>
-        <div class="scoop"></div>
-        <div class="cone"></div>
-    </div>
+    <div id="loading">Loading...</div>
+    <div id="content">Pabili siopao</div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3000); // 3 seconds loading
+    </script>
 </body>
 </html>
 
